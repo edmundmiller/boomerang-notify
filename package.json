@@ -1,0 +1,13 @@
+{
+  "name": "boomerang-notify",
+  "version": "0.1.0",
+  "description": "OpenCode plugin that sends desktop notifications when child sessions complete",
+  "main": "index.ts",
+  "type": "module",
+  "keywords": ["opencode", "plugin", "notifications", "boomerang"],
+  "author": "Edmund Miller",
+  "license": "MIT",
+  "peerDependencies": {
+    "@opencode-ai/plugin": "^1.0.0"
+  }
+}
