@@ -4,10 +4,28 @@
   "description": "OpenCode plugin that sends desktop notifications when child sessions complete",
   "main": "index.ts",
   "type": "module",
-  "keywords": ["opencode", "plugin", "notifications", "boomerang"],
+  "keywords": [
+    "opencode",
+    "plugin",
+    "notifications",
+    "boomerang"
+  ],
   "author": "Edmund Miller",
   "license": "MIT",
+  "scripts": {
+    "lint": "oxlint -c .oxlintrc.json index.ts",
+    "lint:anti-slop": "oxlint -c .oxlintrc.json index.ts",
+    "lint:strict": "oxlint -c .oxlintrc.strict.json index.ts",
+    "lint:jev": "node tools/oxlint/anti-slop/jev/lint-changed.ts -c .oxlintrc.jev.json --no-error-on-unmatched-pattern",
+    "lint:jev:full": "node tools/oxlint/anti-slop/jev/lint-changed.ts --all -c .oxlintrc.jev.json index.ts",
+    "lint:diff": "node tools/oxlint/anti-slop/diff-rules/run.ts --working"
+  },
   "peerDependencies": {
     "@opencode-ai/plugin": "^1.0.0"
+  },
+  "devDependencies": {
+    "@oxlint/plugins": "1.86.0",
+    "oxlint": "1.86.0",
+    "oxlint-plugin-jev": "file:tools/oxlint/oxlint-plugin-jev"
   }
 }
